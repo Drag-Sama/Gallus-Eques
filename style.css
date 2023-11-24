@@ -16,5 +16,25 @@
 }
 .bouton{
     padding-left: 120px;
-    font-size: 20px;
+    font-size: 200%;
+}
+
+.container
+{
+    margin-top: 40px;
+  width:  100%; /*or 70%, or what you want*/
+  height: 70%; /*or 70%, or what you want*/
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 425%;
+  color: azure;
+  display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+h1{
+    text-align:center;
+    font-size: 350%;
 }
