@@ -126,3 +126,10 @@ hr{
 
 }
 
+.filtre { 
+    display : flex;
+}
+
+.filtre_clicked{
+    background-color: grey;
+}

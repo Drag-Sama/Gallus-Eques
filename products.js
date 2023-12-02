@@ -69,4 +69,21 @@ var filters = [];
 
 hideproducts(filters); //pour test
 
+///////////////// LES BOUTONS /////////////////////////////
 
+var boutons = document.querySelectorAll(".filtre")
+boutons.forEach(function(bouton) {
+    bouton.addEventListener("click", function() {
+        if (bouton.classList.contains("filtre_clicked")) {
+            bouton.classList.remove("filtre_clicked")
+            index = filters.indexOf(bouton.id)
+            filters.splice(index, 1)
+            hideproducts(filters)
+        }
+        else {
+            bouton.classList.add("filtre_clicked")
+            filters.push(bouton.id)
+            hideproducts(filters)
+        }
+    })
+})
