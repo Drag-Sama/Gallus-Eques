@@ -74,7 +74,7 @@ h3{
     width: 200%;
 }
 
-.produits{
+.product_line{
     display: flex;
     justify-content: space-evenly;
 }
@@ -88,11 +88,16 @@ h3{
    margin-top: 20px;
 }
 
-.image{
+.BoutiqueBoxImage{
     display : flex;
     background-color: grey;
     border-radius: 30px;
     padding:10px;
+}
+
+.BoutiqueImage{
+    height: 100px;
+    width: 100px;
 }
 
 .box_price{
