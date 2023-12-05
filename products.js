@@ -26,8 +26,10 @@ function displayproducts(){
         div2.classList.add("box_price");
         div1.appendChild(div2);   
         para = document.createElement('p');
-        para.classList.add("reduc");
-        para.innerText = item[1];
+        if (! item[1] == 0) {
+            para.classList.add("reduc");
+            para.innerText = item[1];
+        }
         div2.appendChild(para);
         para = document.createElement('p');
         para.classList.add("price");
@@ -62,7 +64,9 @@ function hideproducts(filters) {
     }
 }
 
-var list_items = [['sword1', 24.99, 12.99],['sword2',0,0],['sword3',0,0],['sword4',0,0],['sword5',0,0],['sword6',0,0],['armor1',0,0]];
+//Liste des produits et de leur prix selon le modèle suivant : 
+//[Nom de l'image associé, prix avant promotion, prix actuel] (si le prix avant promotion est 0 ,il n'y a pas de promotion)
+var list_items = [['sword1', 24.99, 12.99],['sword2',199.99, 99.99],['sword3',0,0],['sword4',0,199.99],['sword5',0,0],['sword6',0,0],['armor1',0,0], ['shield1',0,0]];
 displayproducts();
 
 var filters = [];

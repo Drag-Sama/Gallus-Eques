@@ -96,8 +96,8 @@ h3{
 }
 
 .BoutiqueImage{
-    height: 100px;
-    width: 100px;
+    height: 160px;
+    width: 160px;
 }
 
 .box_price{
@@ -126,10 +126,32 @@ hr{
 
 }
 
+.filtreBar{
+    display: flex;
+    
+}
+
 .filtre { 
     display : flex;
+    margin-left: 10px;
+    background-color: white;
+    border-radius: 8px;
+    width: 160px;
+    height: 40px;
+    font-size: 15px;
+    padding-top: 10px;
+    text-align: center;
+
+}
+
+.filtre:hover{
+    background-color: rgb(216, 216, 216);
 }
 
 .filtre_clicked{
-    background-color: grey;
+    background-color: rgb(151, 250, 248);
+}
+
+.filtre_clicked:hover{
+    background-color: rgb(107, 219, 217);
 }
