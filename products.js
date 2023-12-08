@@ -40,12 +40,12 @@ if (document.body.id != 'Accueil'){
             para = document.createElement('p');
             if (! item[1] == 0) {
                 para.classList.add("reduc");
-                para.innerText = item[1];
+                para.innerText = item[1] + '€';
             }
             div2.appendChild(para);
             para = document.createElement('p');
             para.classList.add("price");
-            para.innerText = item[2];
+            para.innerText = item[2] + '€';
             div2.appendChild(para);
             i += 1;
         }
@@ -91,6 +91,7 @@ if (document.body.id == 'Accueil') {
         for (const item of list_items) {
             if (item[1] != 0) {
             produitPromo.push(item);
+            
             }
         }
         updatePromo();
@@ -110,10 +111,8 @@ if (document.body.id == 'Accueil') {
     }
 
     function updatePromo(){
-        for (let z= 0; z< 4;z++){
-            
-            let i  =(z+p)%(produitPromo.length);
-            console.log(i);
+        for (let i=0+p; i< 4+p;i++){
+            console.log(p);
             let img1 = document.createElement('img');
             itemPromo.push(img1);
 
@@ -154,11 +153,11 @@ if (document.body.id == 'Accueil') {
         carousel.appendChild(button_next);
         button_next.addEventListener("click",(event) => {
             console.log("HHHHHHHAAAAAAAAAA");
-            
+            if(produitPromo.length > p+4){
             p+= 1;
             resetPromo();
             updatePromo();
-            
+            }
             
         });
     }
@@ -167,11 +166,11 @@ if (document.body.id == 'Accueil') {
     
 
     function prev () {
-            
+            if(p!= 0){
             p-= 1;
             resetPromo();
             updatePromo();
-            
+            }
     }
 
     
