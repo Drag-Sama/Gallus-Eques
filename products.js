@@ -91,7 +91,6 @@ if (document.body.id == 'Accueil') {
         for (const item of list_items) {
             if (item[1] != 0) {
             produitPromo.push(item);
-            
             }
         }
         updatePromo();
@@ -111,8 +110,10 @@ if (document.body.id == 'Accueil') {
     }
 
     function updatePromo(){
-        for (let i=0+p; i< 4+p;i++){
-            console.log(p);
+        for (let z= 0; z< 4;z++){
+            
+            let i  =(z+p)%(produitPromo.length);
+            console.log(i);
             let img1 = document.createElement('img');
             itemPromo.push(img1);
 
@@ -153,11 +154,11 @@ if (document.body.id == 'Accueil') {
         carousel.appendChild(button_next);
         button_next.addEventListener("click",(event) => {
             console.log("HHHHHHHAAAAAAAAAA");
-            if(produitPromo.length > p+4){
+            
             p+= 1;
             resetPromo();
             updatePromo();
-            }
+            
             
         });
     }
@@ -166,11 +167,11 @@ if (document.body.id == 'Accueil') {
     
 
     function prev () {
-            if(p!= 0){
+            
             p-= 1;
             resetPromo();
             updatePromo();
-            }
+            
     }
 
     
