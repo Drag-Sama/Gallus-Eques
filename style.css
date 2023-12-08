@@ -155,3 +155,12 @@ hr{
 .filtre_clicked:hover{
     background-color: rgb(107, 219, 217);
 }
+
+.carousel {
+    display : flex;
+    flex-direction: row;
+}
+
+.button_carousel{
+    
+}
