@@ -2,7 +2,13 @@
 
 //Liste des produits et de leur prix selon le modèle suivant : 
 //[Nom de l'image associé, prix avant promotion, prix actuel] (si le prix avant promotion est 0 ,il n'y a pas de promotion)
-var list_items = [['sword1', 24.99, 12.99],['sword2',199.99, 99.99],['sword3',200,100],['sword4',500,199.99],['sword5',0,0],['sword6',0,0],['armor1',0,0], ['shield1',0,0]];
+var list_items = [['sword1', 24.99, 12.99],['sword2',199.99, 99.99],['sword3',0,0],['sword4',0,199.99],
+['sword5',0,0],['sword6',20,19],['sword7',0,0],['sword8',0,0],['armor2',4990.98,999.99],['armor1',0,0],['armor3',0,0],['armor4',0,0],['armor5',0,0],
+ ['shield1',0,0],['shield2',0,0],['shield3',79,90],['shield4',20,2]];
+
+
+
+
 if (document.body.id != 'Accueil'){
     function displayproducts(){
         let product_line = document.getElementsByClassName("product_line")[0];
@@ -80,46 +86,94 @@ if (document.body.id != 'Accueil'){
 if (document.body.id == 'Accueil') {
     var carousel = document.querySelector('.carousel');
     var produits = document.querySelector('.produit');
+    var produitPromo = [];
     function displayproductsprom() { //affiche les produits en promotions pour le carousel de l'Accueil
         for (const item of list_items) {
             if (item[1] != 0) {
+            produitPromo.push(item);
+            
+            }
+        }
+        updatePromo();
+
+        
+    }
+    var itemPromo = [];
+    var p = 0;
+    function resetPromo(){
+        console.log(itemPromo);
+        for(const produit of document.getElementsByClassName("produit")){
+            produit.style.display = "none";
+        }
+        document.getElementById("next").remove();
+        
+
+    }
+
+    function updatePromo(){
+        for (let i=0+p; i< 4+p;i++){
+            console.log(p);
             let img1 = document.createElement('img');
-            img1.src = './Image/products/' + item[0] + '.png';
+            itemPromo.push(img1);
+
+            img1.src = './Image/products/' + produitPromo[i][0] + '.png';
             img1.classList.add("BoutiqueImage");
             let div1 = document.createElement('div');
+
+            itemPromo.push(div1);
             div1.classList.add("produit");
+
             let div_img = document.createElement('div');
+            itemPromo.push(div_img);
             div_img.classList.add("BoutiqueBoxImage");
             carousel.appendChild(div1);
             div1.appendChild(div_img);
             div_img.appendChild(img1);
+
             div2 = document.createElement('div');
+            itemPromo.push(div2);
             div2.classList.add("box_price");
             div1.appendChild(div2);   
+
             para = document.createElement('p');
+            itemPromo.push(para);
             para.classList.add("reduc");
-            para.innerText = item[1];
+            para.innerText = produitPromo[i][1];
             div2.appendChild(para);
             para = document.createElement('p');
             para.classList.add("price");
-            para.innerText = item[2];
+            para.innerText = produitPromo[i][2];
             div2.appendChild(para);
-            }
         }
+        
         button_next = document.createElement('button');
         button_next.classList.add('button_carousel');
         button_next.id = 'next';
         button_next.innerText = 'next'
         carousel.appendChild(button_next);
+        button_next.addEventListener("click",(event) => {
+            console.log("HHHHHHHAAAAAAAAAA");
+            if(produitPromo.length > p+4){
+            p+= 1;
+            resetPromo();
+            updatePromo();
+            }
+            
+        });
     }
+
+
+    
 
     function prev () {
-
+            if(p!= 0){
+            p-= 1;
+            resetPromo();
+            updatePromo();
+            }
     }
 
-    function next() {
-
-    }
+    
     displayproductsprom();
 }
 
@@ -144,3 +198,4 @@ boutons.forEach(function(bouton) {
         }
     })
 })
+

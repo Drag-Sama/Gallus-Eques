@@ -162,5 +162,5 @@ hr{
 }
 
 .button_carousel{
-    
+    display: flex;
 }
