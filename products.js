@@ -40,12 +40,12 @@ if (document.body.id != 'Accueil'){
             para = document.createElement('p');
             if (! item[1] == 0) {
                 para.classList.add("reduc");
-                para.innerText = item[1] + '€';
+                para.innerText = item[1];
             }
             div2.appendChild(para);
             para = document.createElement('p');
             para.classList.add("price");
-            para.innerText = item[2] + '€';
+            para.innerText = item[2];
             div2.appendChild(para);
             i += 1;
         }
@@ -91,7 +91,6 @@ if (document.body.id == 'Accueil') {
         for (const item of list_items) {
             if (item[1] != 0) {
             produitPromo.push(item);
-            
             }
         }
         updatePromo();
@@ -111,12 +110,14 @@ if (document.body.id == 'Accueil') {
     }
 
     function updatePromo(){
-        for (let i=0+p; i< 4+p;i++){
-            console.log(p);
+        for (let i= 0+p; i< p+4;i++){
+            
+            z = i%produitPromo.length;
+
             let img1 = document.createElement('img');
             itemPromo.push(img1);
 
-            img1.src = './Image/products/' + produitPromo[i][0] + '.png';
+            img1.src = './Image/products/' + produitPromo[z][0] + '.png';
             img1.classList.add("BoutiqueImage");
             let div1 = document.createElement('div');
 
@@ -138,26 +139,29 @@ if (document.body.id == 'Accueil') {
             para = document.createElement('p');
             itemPromo.push(para);
             para.classList.add("reduc");
-            para.innerText = produitPromo[i][1];
+            para.innerText = produitPromo[z][1];
             div2.appendChild(para);
             para = document.createElement('p');
             para.classList.add("price");
-            para.innerText = produitPromo[i][2];
+            para.innerText = produitPromo[z][2];
             div2.appendChild(para);
         }
         
         button_next = document.createElement('button');
         button_next.classList.add('button_carousel');
         button_next.id = 'next';
-        button_next.innerText = 'next'
+        button_next.innerText = '>'
         carousel.appendChild(button_next);
         button_next.addEventListener("click",(event) => {
-            console.log("HHHHHHHAAAAAAAAAA");
-            if(produitPromo.length > p+4){
+            console.log(p);
+            
             p+= 1;
+            if(p == produitPromo.length){
+                p = 0;
+            }
             resetPromo();
             updatePromo();
-            }
+            
             
         });
     }
@@ -166,11 +170,15 @@ if (document.body.id == 'Accueil') {
     
 
     function prev () {
-            if(p!= 0){
+            
             p-= 1;
+            if(p < 0){
+                p = produitPromo.length-1 ;
+                console.log(p);
+            }
             resetPromo();
             updatePromo();
-            }
+            
     }
 
     
