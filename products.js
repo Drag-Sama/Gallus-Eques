@@ -40,12 +40,12 @@ if (document.body.id != 'Accueil'){
             para = document.createElement('p');
             if (! item[1] == 0) {
                 para.classList.add("reduc");
-                para.innerText = item[1];
+                para.innerText = item[1] + '€';
             }
             div2.appendChild(para);
             para = document.createElement('p');
             para.classList.add("price");
-            para.innerText = item[2];
+            para.innerText = item[2] + '€';
             div2.appendChild(para);
             i += 1;
         }
@@ -139,11 +139,11 @@ if (document.body.id == 'Accueil') {
             para = document.createElement('p');
             itemPromo.push(para);
             para.classList.add("reduc");
-            para.innerText = produitPromo[z][1];
+            para.innerText = produitPromo[z][1] + '€';
             div2.appendChild(para);
             para = document.createElement('p');
             para.classList.add("price");
-            para.innerText = produitPromo[z][2];
+            para.innerText = produitPromo[z][2] + '€';
             div2.appendChild(para);
         }
         
