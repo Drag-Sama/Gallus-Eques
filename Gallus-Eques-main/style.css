@@ -1,0 +1,188 @@
+body {
+    font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+}
+
+.bandeau{
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    background-color: #553844;
+}
+
+.chapeau{
+    display: flex;
+    align-items: center;
+    margin-right: 8%;
+ }
+
+.logo{
+    width: 10%;
+    
+}
+.bouton{
+    padding-left: 80px;
+    font-size: 200%;
+    color: black;
+    text-decoration : none;
+    
+}
+
+.bouton:hover{
+    text-decoration : underline ;
+    font-weight : bold;
+}
+.container
+{
+    margin-top: 40px;
+  width:  100%; 
+  height: 70%; 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 425%;
+  color: azure;
+  display: flex;
+    align-items: center;
+    padding-left: 20px;
+    Font-family: Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif;
+}
+
+h1{
+    text-align:center;
+    font-size: 350%;
+}
+
+h3{
+    text-align: center;
+    font-size: 200%;
+}
+
+
+
+.Contacts{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    ;
+}
+.contact{
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 10%;
+    margin-right: 10%;
+    
+}
+
+.ContactImage{
+    width: 200%;
+}
+
+.product_line{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.produit{
+   display : flex;
+   flex-direction: column;
+   background-color: black;
+   border-radius: 30px;
+   padding: 8.5px;
+   margin-top: 20px;
+}
+
+.BoutiqueBoxImage{
+    display : flex;
+    background-color: grey;
+    border-radius: 30px;
+    padding:10px;
+}
+
+.BoutiqueImage{
+    height: 160px;
+    width: 160px;
+}
+
+.box_price{
+    display : flex;
+    color : white;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.reduc{
+    display : flex;
+    justify-content: flex-start;
+    color: red;
+    text-decoration : line-through;
+    margin : 5px;
+}
+
+.price{
+    text-align: center;
+    margin : 5px
+}
+
+hr{
+    background-color: black;
+    height: 3px;
+
+}
+
+.filtreBar{
+    display: flex;
+    
+}
+
+.filtre { 
+    display : flex;
+    margin-left: 10px;
+    background-color: white;
+    border-radius: 8px;
+    width: 160px;
+    height: 40px;
+    font-size: 15px;
+    padding-top: 10px;
+    text-align: center;
+
+}
+
+.filtre:hover{
+    background-color: rgb(216, 216, 216);
+}
+
+.filtre_clicked{
+    background-color: rgb(151, 250, 248);
+}
+
+.filtre_clicked:hover{
+    background-color: rgb(107, 219, 217);
+}
+
+.carousel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button_carousel{
+    display: flex;
+    border-radius: 30px;
+    padding: 8.5px;
+    margin-top: 20px;
+    width: 50px;
+    height: 90px;
+    align-items: center;
+    font-size: 30px;
+    justify-content: center;
+    background-color: white;
+
+}
+
+.button_carousel:hover{
+    background-color: rgb(241, 241, 241);
+}
